@@ -1,4 +1,4 @@
-# PasswdMan
+<h1 align="center"> <b>PasswdMan</b> </h1>
 Simple password manager made in C.
 ---
 
