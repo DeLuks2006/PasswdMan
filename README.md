@@ -7,6 +7,6 @@ Simple password manager made in C.
 - [ ] Password generation
 - [ ] Password storing
 - [ ] Encryption
-- [ ] GUI using ImGUI
+- [ ] GUI using GUI
 - [ ] Input Validation
 - [ ] ...
