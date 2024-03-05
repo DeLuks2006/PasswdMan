@@ -9,4 +9,4 @@ Simple password manager made in C.
 - [ ] Encryption
 - [ ] GUI using imGUI
 - [ ] Input Validation
-- [ ] ...
+- [ ] Master Password
