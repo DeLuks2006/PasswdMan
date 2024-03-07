@@ -11,10 +11,6 @@
 ## Progress Updates
 **Working on the GUI rn...**
 
-You NEED the imgui library in a folder named "imgui" to compile the program!
-
-(Unfortunately, for some weird reason I cannot upload the imgui folder :P )
-
 ## 
 **⚠️ TODO: ⚠️**
 <!-- Some Goals for the Project. -->
