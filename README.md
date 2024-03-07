@@ -1,6 +1,9 @@
 <h1 align="center"> <b>PasswdMan</b> </h1>
 <p align="center">Simple password manager made in C.</p>
-(current state)
+<p align="center">
+  <code>(current state)</code>
+</p>
+
 <p align="center">
   <img src="PASSWDMAN-Curent-State.png">
 </p>
