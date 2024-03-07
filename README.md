@@ -1,8 +1,15 @@
 <h1 align="center"> <b>PasswdMan</b> </h1>
-Simple password manager made in C.
----
+<p align="center">Simple password manager made in C.</p>
 
-**⚠️ Work In Progress... ⚠️**
+## Progress Updates
+**Working on the GUI rn...**
+
+You NEED the imgui library in a folder named "imgui" to compile the program!
+
+(Unfortunately, for some weird reason I cannot upload the imgui folder :P )
+
+## 
+**⚠️ TODO: ⚠️**
 <!-- Some Goals for the Project. -->
 - [ ] Password generation
 - [ ] Password storing
