@@ -9,7 +9,7 @@
 </p>
 
 ## Progress Updates
-**Working on the GUI rn...**
+**Working on the GUI rn...** (and the password generation)
 
 ## 
 **⚠️ TODO: ⚠️**
