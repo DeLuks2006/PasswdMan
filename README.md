@@ -1,5 +1,5 @@
 <h1 align="center"> <b>PasswdMan</b> </h1>
-<p align="center">Simple password manager made in C.</p>
+<p align="center">Simple password manager made in C/C++.</p>
 <p align="center">
   <code>(current state)</code>
 </p>
