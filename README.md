@@ -11,6 +11,8 @@
 ## Progress Updates
 **Working on the GUI rn...** (and the password generation)
 
+gotta learn to use libsodium and sqlite3 libraries too :P
+
 ## 
 **⚠️ TODO: ⚠️**
 <!-- Some Goals for the Project. -->
