@@ -20,3 +20,17 @@
 - [ ] GUI using imGUI (I'm workin on it!!)
 - [ ] Input Validation
 - [ ] Master Password
+## 
+**Brainstorming:**
+
+(stuff here isn't thought completely trough yet)
+
+*Saving created buttons/entries:*
+1. store data in SQL table
+2. grab data from the table at startup
+3. use grabbed data to initialize structs
+4. use initialized structs to create buttons that when clicked render the needed UI elements
+
+passwords will be stored encrypted and will only be decrypted when needed.
+
+the master passwords hash will only be saved and not the password itself (for obvious reasons)
