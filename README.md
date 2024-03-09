@@ -14,7 +14,7 @@
 ## 
 **⚠️ TODO: ⚠️**
 <!-- Some Goals for the Project. -->
-- [ ] Password generation
+- [ ] Password generation (50% done)
 - [ ] Password storing
 - [ ] Encryption
 - [ ] GUI using imGUI (I'm workin on it!!)
