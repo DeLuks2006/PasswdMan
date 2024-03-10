@@ -7,14 +7,22 @@ working on the password manager part. doing GUI last
 gotta learn to use libsodium and sqlite3 libraries too :P
 
 ## 
-**⚠️ TODO: ⚠️**
+# ⚠️ TODO: ⚠️
 <!-- Some Goals for the Project. -->
-- [x] Password generation
-- [ ] Password storing
-- [ ] Encryption
-- [ ] Input Validation
-- [ ] Master Password
-- [ ] GUI using html renderer or sth
+| Objective | Status |
+| --------- | ------ |
+| **Generation** | |
+| Password Generator | ✔️ | 
+| **Storing** | |
+| Let user add passwords in db | ❌ |
+| SQLite database as storage | ❌ |
+| Encryption | ❌ |
+| **Security** | |
+| Master Password | ❌ |
+| Input Validation | ❌ |
+| **GUI** | |
+| GUI using HTML renderer | ❌ |
+
 ## 
 **Brainstorming:**
 
