@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define MASTER_PASS "verySecurePassword"
+#define MASTER_PASS "verySecurePassword" // totally not stored in the DB too
 #define ADDITIONAL_DATA (const unsigned char*) "secretDataVerySecureAndHidden123456"
 
 int main() {
@@ -32,7 +32,7 @@ int main() {
 		return 1;
 	}
 	// check if aes is available
-	if (crypto_aead_aes256gcm_is_available() == 0) {
+	if (!crypto_aead_aes256gcm_is_available()) {
 		fprintf(stderr, "[-] AES-256-GCM is not available on this CPU.");
 		abort();
 	}
@@ -40,7 +40,7 @@ int main() {
 	randombytes_buf(nonce, sizeof(nonce));
 
 	// open db
-	printf("[i] Opening In-Memory Database\n");
+	printf("[i] Opening Database\n");
 	rc = sqlite3_open("test.db", &db);
 
 	if (rc != SQLITE_OK) {
@@ -51,21 +51,18 @@ int main() {
 	}
 
 	/*---------[ CREATE TABLE ]---------*/
-	printf("[i] Creating Table...\n");;
-	const char* sql = "CREATE TABLE passwords(Id INTEGER PRIMARY KEY, Name TEXT, Password TEXT);";
-	// "INSERT INTO passwords(Name, Password) VALUES ('Netflix', EncryptedPass);";
+	const char* create_table_sql = "CREATE TABLE IF NOT EXISTS passwords(Id INTEGER PRIMARY KEY, Name TEXT, Password TEXT);";
+	rc = sqlite3_exec(db, create_table_sql, 0, 0, &err_msg);
 
-	rc = sqlite3_exec(db, sql, 0, 0, &err_msg);
 	if (rc != SQLITE_OK) {
-		fprintf(stderr, "[-] Failed to create table\n");;
-		fprintf(stderr, "[i] SQL Error: %s\n", err_msg );
+		fprintf(stderr, "[-] Failed to create table\n");
+		fprintf(stderr, "[i] SQL Error: %s\n", err_msg);
 		sqlite3_free(err_msg);
 		sqlite3_close(db);
-
 		return 1;
 	}
+	printf("[i] Table \"passwords\" created or already exists\n");
 
-	printf("[i] Table \"passwords\" created successfully\n");
 
 	/*---------[ READ INPUT FROM USER ]---------*/
 	char* insert = "INSERT INTO passwords(Name, Password) VALUES(@name, @pass);";
@@ -112,6 +109,7 @@ int main() {
 
 		memset(cipher, 0, sizeof(cipher));
 		memset(name, 0, sizeof(name));
+		answer = 0;
 	} while (answer != 'n' && answer != 'N');
 
 
