@@ -11,9 +11,9 @@ int main() {
 	/*---------[ VARIABLE DECLARATION ]---------*/
 	// for sql
 	sqlite3* db;
-	char*	err_msg			= 0;
-	int		rc				= 0;
-	sqlite3_int64 last_id	= 0;
+	char*	err_msg	= 0;
+	int rc = 0;
+	sqlite3_int64 last_id = 0;
 	sqlite3_stmt* res;
 	// misc
 	char	name[64];
