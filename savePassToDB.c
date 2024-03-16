@@ -68,6 +68,7 @@ int main() {
 	char* insert = "INSERT INTO passwords(Name, Password) VALUES(@name, @pass);";
 
 	do {
+		answer = 0;
 		// service name
 		printf("Input the Name of the Service (Max. 64 characters): ");
 		fgets(name, sizeof(name), stdin);
@@ -103,13 +104,14 @@ int main() {
 		int step = sqlite3_step(res);
 		// error happens somewhere here i think
 		while (answer != 'y' && answer != 'Y' && answer != 'N' && answer != 'n') {
-			printf("[i] Do you want to add another entry? (Y/N)\n");
-			answer = getchar();
+			printf("[i] Do you want to add another entry? (Y/N): ");
+			scanf("%c", &answer);
+			getchar();
 		}
 
 		memset(cipher, 0, sizeof(cipher));
 		memset(name, 0, sizeof(name));
-		answer = 0;
+
 	} while (answer != 'n' && answer != 'N');
 
 

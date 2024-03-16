@@ -1,0 +1,7 @@
+/include/sodium
+/include/sodium.h
+/include/sqlite3.h
+/include/sqlite3-vcpkg-config.h
+/include/sqlite3ext.h
+/lib
+/dll
