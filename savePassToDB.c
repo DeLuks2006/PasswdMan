@@ -11,9 +11,9 @@ int main() {
 	/*---------[ VARIABLE DECLARATION ]---------*/
 	// for sql
 	sqlite3* db;
-	char*	err_msg			= 0;
-	int		rc				= 0;
-	sqlite3_int64 last_id	= 0;
+	char* err_msg = 0;
+	int rc = 0;
+	sqlite3_int64 last_id = 0;
 	sqlite3_stmt* res;
 	// misc
 	char	name[64];
@@ -101,7 +101,7 @@ int main() {
 		sqlite3_bind_text(res, 2, cipher, -1, SQLITE_STATIC);
 
 		int step = sqlite3_step(res);
-
+		// error happens somewhere here i think
 		while (answer != 'y' && answer != 'Y' && answer != 'N' && answer != 'n') {
 			printf("[i] Do you want to add another entry? (Y/N)\n");
 			answer = getchar();
