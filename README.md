@@ -4,8 +4,6 @@
 ## Progress Updates
 working on the password manager part. doing GUI last
 
-gotta learn to use libsodium and sqlite3 libraries too :P
-
 ## 
 # ⚠️ TODO: ⚠️
 <!-- Some Goals for the Project. -->
@@ -14,9 +12,9 @@ gotta learn to use libsodium and sqlite3 libraries too :P
 | **Generation** | |
 | Password Generator | ✔️ | 
 | **Storing** | |
-| Let user add passwords in db | ❌ |
-| SQLite database as storage | ❌ |
-| Encryption | ❌ |
+| Let user add passwords in db | ✔️ |
+| SQLite database as storage | ✔️ |
+| Encryption | ✔️ |
 | **Security** | |
 | Master Password | ❌ |
 | Input Validation | ❌ |
@@ -26,7 +24,8 @@ gotta learn to use libsodium and sqlite3 libraries too :P
 ## 
 **Brainstorming:**
 
-(stuff here isn't thought completely trough yet)
+> [!WARNING]
+> (stuff here isn't thought completely trough yet)
 
 passwords will be stored encrypted and will only be decrypted when needed.
 
