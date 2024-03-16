@@ -1,6 +1,6 @@
 #include <sqlite3.h>
 #include <stdio.h>
-#include "sodium.h"
+#include <sodium.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -11,14 +11,16 @@ int main() {
 	/*---------[ VARIABLE DECLARATION ]---------*/
 	// for sql
 	sqlite3* db;
-	char* err_msg = 0;
-	int rc = 0;
-	sqlite3_int64 last_id = 0;
+	char*	err_msg			= 0;
+	int		rc				= 0;
+	sqlite3_int64 last_id	= 0;
 	sqlite3_stmt* res;
 	// misc
 	char	name[64];
 	char	password[64];
-	char	answer = '\0';
+	char	answer = 0;
+	char	answerBuffer[2] = { 0 };
+	int c;
 	// for encrypting
 	unsigned char nonce[crypto_aead_aes256gcm_NPUBBYTES];
 	unsigned char key[] = MASTER_PASS;
@@ -68,6 +70,8 @@ int main() {
 	char* insert = "INSERT INTO passwords(Name, Password) VALUES(@name, @pass);";
 
 	do {
+		answer = 0;
+		*answerBuffer = 0;
 		// service name
 		printf("Input the Name of the Service (Max. 64 characters): ");
 		fgets(name, sizeof(name), stdin);
@@ -75,7 +79,7 @@ int main() {
 		// password
 		printf("Input the Current Password (Max. 64 characters): ");
 		fgets(password, sizeof(password), stdin);
-		name[strcspn(password, "\n")] = 0;
+		password[strcspn(password, "\n")] = 0;
 
 		crypto_aead_aes256gcm_encrypt(
 			cipher,
@@ -101,15 +105,17 @@ int main() {
 		sqlite3_bind_text(res, 2, cipher, -1, SQLITE_STATIC);
 
 		int step = sqlite3_step(res);
-		// error happens somewhere here i think
+
 		while (answer != 'y' && answer != 'Y' && answer != 'N' && answer != 'n') {
 			printf("[i] Do you want to add another entry? (Y/N)\n");
-			answer = getchar();
+			fgets(answerBuffer, sizeof(answerBuffer), stdin);
+			answer = answerBuffer[0];
+
+			while ((c = getchar()) != '\n' && c != EOF);
 		}
 
 		memset(cipher, 0, sizeof(cipher));
 		memset(name, 0, sizeof(name));
-		answer = 0;
 	} while (answer != 'n' && answer != 'N');
 
 
