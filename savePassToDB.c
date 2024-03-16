@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define MASTER_PASS "verySecurePassword" // totally not stored in the DB too
+#define MASTER_PASS "verySecurePassword"
 #define ADDITIONAL_DATA (const unsigned char*) "secretDataVerySecureAndHidden123456"
 
 int main() {
