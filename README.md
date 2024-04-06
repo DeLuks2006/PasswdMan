@@ -18,9 +18,6 @@ working on the password manager part. doing GUI last
 | **Security** | |
 | Master Password | ❌ |
 | Input Validation | ❌ |
-| **GUI** | |
-| GUI using HTML renderer | ❌ |
-
 ## 
 **Brainstorming:**
 
