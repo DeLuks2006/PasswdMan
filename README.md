@@ -1,8 +1,6 @@
 <h1 align="center"> <b>PasswdMan</b> </h1>
 <p align="center">A simple, lightweight (and insecure) password manager written in C</p>
 
----
-
 ## About
 PasswdMan is a simple and lightweight password manager written in pure C, leveraging the power of `libsodium` for encryption and `sqlite3` for database management. This project aims to provide a basic, educational example of a password manager.
 
